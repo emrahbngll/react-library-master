@@ -23,7 +23,7 @@ const AddBookForm = (props) => {
   //     .catch((err) => console.log(err));
   // }, []);
 
-  const handleSubmit = (event) => {
+  function handleSubmit(event) {
     event.preventDefault();
     if (bookname === "" || author === "" || category === "") {
       alert("Kitap adı, Kitap Yazarı ve Kategori boş bırakılamaz");
@@ -48,7 +48,7 @@ const AddBookForm = (props) => {
         navigate("/");
       })
       .catch((err) => console.log(err));
-  };
+  }
 
   if (categoriesState.success !== true) {
     return <Loading />;

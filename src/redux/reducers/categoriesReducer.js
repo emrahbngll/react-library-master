@@ -29,6 +29,32 @@ const categoriesReducer = (state = initialState, action) => {
       errorMessage: action.payload,
     };
   }
+  if (action.type === "ADD_CATEGORY") {
+    return {
+      ...state,
+      categories: [...state.categories, action.payload],
+    };
+  }
+  if (action.type === "DELETE_CATEGORY") {
+    const filteredCategories = state.categories.filter(
+      (item) => item.id !== action.payload
+    );
+    return {
+      ...state,
+      categories: filteredCategories,
+    };
+  }
+   
+  if (action.type === "EDIT_CATEGORY") {
+    const filteredCategories = state.categories.filter(
+      // eslint-disable-next-line eqeqeq
+      (item) => item.id != action.payload.id
+    );
+    return {
+      ...state,
+      categories: [...filteredCategories, action.payload],
+    };
+  }
   return state;
   // switch (action.type) {
   //   case "FETCH_CATEGORIES_START":
