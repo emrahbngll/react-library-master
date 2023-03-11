@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import Loading from "./Loading";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import Loading from './Loading';
+import { useSelector, useDispatch } from 'react-redux';
 
 const AddBookForm = (props) => {
   const dispatch = useDispatch();
   const { categoriesState } = useSelector((state) => state);
   const navigate = useNavigate();
   //const [categories, setCategories] = useState(null);
-  const [bookname, setBookname] = useState("");
-  const [author, setAuthor] = useState("");
-  const [isbn, setIsbn] = useState("");
-  const [category, setCategory] = useState("");
+  const [bookname, setBookname] = useState('');
+  const [author, setAuthor] = useState('');
+  const [isbn, setIsbn] = useState('');
+  const [category, setCategory] = useState('');
   // useEffect(() => {
   //   axios
   //     .get("http://localhost:3004/categories")
@@ -25,8 +25,8 @@ const AddBookForm = (props) => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (bookname === "" || author === "" || category === "") {
-      alert("Kitap adı, Kitap Yazarı ve Kategori boş bırakılamaz");
+    if (bookname === '' || author === '' || category === '') {
+      alert('Kitap adı, Kitap Yazarı ve Kategori boş bırakılamaz');
       return;
     }
     const newBook = {
@@ -37,15 +37,15 @@ const AddBookForm = (props) => {
       categoryId: category,
     };
     axios
-      .post("http://localhost:3004/books", newBook)
+      .post('http://localhost:3004/books', newBook)
       .then((res) => {
-        console.log("kitap ekle res", res);
-        dispatch({ type: "ADD_BOOK", payload: newBook });
-        setBookname("");
-        setAuthor("");
-        setIsbn("");
-        setCategory("");
-        navigate("/");
+        console.log('kitap ekle res', res);
+        dispatch({ type: 'ADD_BOOK', payload: newBook });
+        setBookname('');
+        setAuthor('');
+        setIsbn('');
+        setCategory('');
+        navigate('/');
       })
       .catch((err) => console.log(err));
   }
@@ -62,7 +62,7 @@ const AddBookForm = (props) => {
             <input
               type="text"
               className="form-control"
-              placeholder="Kitap Adı"
+              placeholder="Book Name"
               value={bookname}
               onChange={(event) => setBookname(event.target.value)}
             />
@@ -71,7 +71,7 @@ const AddBookForm = (props) => {
             <input
               type="text"
               className="form-control"
-              placeholder="Kitap Yazarı"
+              placeholder="Book Author"
               value={author}
               onChange={(event) => setAuthor(event.target.value)}
             />
@@ -91,10 +91,9 @@ const AddBookForm = (props) => {
             <select
               className="form-select"
               value={category}
-              onChange={(event) => setCategory(event.target.value)}
-            >
-              <option value={""} selected>
-                Kategori Seçin
+              onChange={(event) => setCategory(event.target.value)}>
+              <option value={''} selected>
+                Select Category
               </option>
               {categoriesState.categories.map((cat) => {
                 return (
@@ -108,7 +107,7 @@ const AddBookForm = (props) => {
         </div>
         <div className="d-flex justify-content-center">
           <button type="submit" className="btn btn-primary w-50">
-            Kaydet
+            Submit
           </button>
         </div>
       </form>

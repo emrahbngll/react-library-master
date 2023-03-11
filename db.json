@@ -4,8 +4,8 @@
       "id": 1,
       "name": "Yaban",
       "author": "Yakup Kadri Karaosmanoğlu",
-      "categoryId": "1",
-      "isbn": "11111111111"
+      "categoryId": "3",
+      "isbn": "111111112223"
     },
     {
       "id": 2,
@@ -18,36 +18,33 @@
       "id": 3,
       "name": "Denemeler",
       "author": "Montaigne",
-      "isbn": "11111111113",
-      "categoryId": "3"
+      "categoryId": "2",
+      "isbn": "111111111132"
     },
     {
-      "id": 1662320160640,
-      "name": "Sineklerin Tanrısı",
-      "author": "William Golding",
-      "categoryId": "1",
-      "isbn": ""
-    },
-    {
-      "id": 1663445754196,
-      "name": "dfgdf 1",
-      "author": "gjgh deneme",
-      "categoryId": "1",
-      "isbn": ""
+      "id": 1678549210084,
+      "name": "The lost symbol",
+      "author": "dan brown",
+      "isbn": "32423565636",
+      "categoryId": "1678548496578"
     }
   ],
   "categories": [
     {
-      "id": "1",
-      "name": "Roman"
-    },
-    {
       "id": "2",
-      "name": "Hikaye"
+      "name": "Essays"
     },
     {
       "id": "3",
-      "name": "Deneme"
+      "name": "Poetry"
+    },
+    {
+      "id": 1678548496578,
+      "name": "Romance"
+    },
+    {
+      "id": 1678549228565,
+      "name": "Novel"
     }
   ]
 }

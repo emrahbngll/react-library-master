@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddBook from "./pages/AddBook";
 import EditBook from "./pages/EditBook";
 import CategoriesList from "./pages/CategoriesList";
+import AddCategory from "./pages/AddCategory";
+import EditCategory from "./pages/EditCategory";
 
 import Home from "./pages/Home";
 import { useDispatch } from "react-redux";
@@ -47,6 +49,10 @@ function App() {
         <Route path="/add-book" element={<AddBook />} />
         <Route path="/edit-book/:kitapId" element={<EditBook />} />
         <Route path="/categories" element={<CategoriesList />} />
+        <Route path="/add-category" element={<AddCategory />} />
+        <Route path="/edit-category/:categoryId" element={<EditCategory />} />
+
+        
       </Routes>
     </BrowserRouter>
   );
